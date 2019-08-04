@@ -1,19 +1,87 @@
+/*font-family: 'Luckiest Guy', cursive;*/
+/*font-family: 'Bowlby One SC', cursive;*/
+/*font-family: 'Roboto Condensed', sans-serif;*/
+
 body {
-  padding: 50px;
+  margin: 0;
+  padding: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+h1 {
+  font-family: 'Luckiest Guy', sans-serif;
+  font-size: 65px;
+}
+h4 {
+  font-family: 'Bowlby One SC', cursive;
+  font-size: 40px;
+}
+p, span, a {
+
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 a {
   color: #00B7FF;
 }
+
 label {
   display: block;
   margin: 1em 0;
 
 }
-input[type="textarea"] {
+form {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  height: 60vh;
+  justify-content: flex-start;
+}
+button:last-child{
+  margin: 3em 0;
+  border: #FFF solid 4px;
+  border-radius: 15px;
+  padding: 1em 0;
+  background-color: #00B7FF;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 30px;
+  color: #FFF;
+}
+input, select, textarea {
+  font-size: 140%;
+}
+input {
+  padding: 5px;
+}
+select{
+  height: 50px;
+}
+textarea {
   overflow: auto;
+  padding: 7px;
   display: block;
   height: 100px;
-  width: 500px;
+  width: 100%;
+  border: solid #00B7FF 2px;
+  border-radius: 12px;
+}
+.quote-text-area:focus {
+  outline: none !important;
+}
+
+.app-header {
+  width: 100vw;
+  background-color: #335533;
+  color: #A9CAB9;
+}
+
+
+.view-container {
+  margin: 0;
+  padding: 1vw 7vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  padding: 1vw 7vw;
 }
