@@ -6,6 +6,29 @@
 </head>
 <body>
 <h1><%= title %></h1>
-<p>Poopy Pants to <%= title %></p>
+<form id="add-quote-form" action="/postNewQuote" method="post" />
+    <label for="character">Character</label>
+    <input name="character" type="text" placeholder="Character" />
+    <label for="season">Season</label>
+    <select name="season" id="quote-form-season-select" type="number" >
+        <%
+            for (let i = 1; i < 14; i++){
+                %><option value=<%=i%>>season <%= i %></option><%
+            }
+
+         %>
+    </select>
+    <label for="quote">Quote</label>
+    <textarea name="quote" cols="50" rows="5" placeholder="Bobby, Al Yankovic blew his brains out in the late 80s after people stopped buying his records." >
+
+    </textarea>
+
+    <button type="button">
+        Submit
+    </button>
+
+
+
+</form>
 </body>
 </html>
