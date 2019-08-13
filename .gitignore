@@ -63,4 +63,4 @@ typings/
 .next
 
 
-config/
+config/keys.js
