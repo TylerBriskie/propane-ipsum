@@ -1,5 +1,8 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const bcrypt = require ('bcrypt');
+const jwt = require('jsonwebtoken');
+const router = express.Router();
+const User = require('../models/User');
 
 /* LOGIN page. */
 router.get('/', function(req, res, next) {
@@ -8,8 +11,34 @@ router.get('/', function(req, res, next) {
     });
 });
 
+
+/* USER LOGIN */
 router.post('/', (req, res, next)=> {
-    console.log('LOGIN RECEIVED, req: ', req.body);
+
+    let userData = req.body;
+    console.log('looking up email - "'+userData.username + '"');
+
+    User.findOne({email: userData.username}, (err, user) => {
+        if (err){
+            console.log("error!  Code 72ne82n90w, error logging in: ", err)
+        } else {
+            console.log(user);
+            if (!user){
+                res.status(401).send("Email Not Found");
+            } else {
+                bcrypt.compare(userData.password, user.password, (err, login) => {
+                    if (login){
+                        let payload = { subject: user._id};
+                        let token = jwt.sign(payload, 'DangOlYoManTalkinBoutTryinaHackMyMainframe');
+                        res.cookie('token', token);
+                        res.redirect('/form');
+                    } else {
+                        res.status(403).send('password incorrect');
+                    }
+                })
+            }
+        }
+    })
 });
 
 module.exports = router;
