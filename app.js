@@ -12,7 +12,7 @@ const atlas = require('./config/keys');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const formRouter = require('./routes/form');
-const loginRouter = require('./routes/login');
+const auth = require('./routes/auth');
 
 var app = express();
 
@@ -30,12 +30,16 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(function(req, res, next) {
+  res.locals.user = req.cookies.token;
+  next();
+});
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/form', formRouter);
-app.use('/login', loginRouter);
+app.use('/auth', auth);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

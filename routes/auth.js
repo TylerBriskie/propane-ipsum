@@ -13,7 +13,7 @@ router.get('/', function(req, res, next) {
 
 
 /* USER LOGIN */
-router.post('/', (req, res, next)=> {
+router.post('/login', (req, res, next)=> {
 
     let userData = req.body;
     console.log('looking up email - "'+userData.username + '"');
@@ -40,5 +40,13 @@ router.post('/', (req, res, next)=> {
         }
     })
 });
+
+router.post('/logout', (req, res, next) => {
+    console.log('logging out!');
+    res.clearCookie('token');
+    res.redirect('/auth');
+});
+
+
 
 module.exports = router;

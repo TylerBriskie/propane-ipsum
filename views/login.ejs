@@ -5,8 +5,8 @@
 <% include partials/header.ejs%>
 
 <div class="view-container">
-
-    <form id="login-form" action="/login" method="post" />
+    <% if(!user) { %>
+    <form id="login-form" action="/auth/login" method="post" />
         <label for="username">User Name</label>
         <input name="username" type="text" placeholder="admin@propaneipsum.com" />
 
@@ -17,8 +17,13 @@
             Submit
         </button>
 
+    </form
+    <% } else { %>
+    <h2>You are Logged In as Hank@Strickprop.com.  log out?</h2>
+    <form action="/auth/logout" method="post">
+        <button class="button">Log Out</button>
     </form>
-
+    <% } %>
 </div>
 
 </body>
