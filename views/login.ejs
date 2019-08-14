@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<% include partials/head.ejs%>
+<body>
+<% include partials/header.ejs%>
+
+<div class="view-container">
+
+    <form id="login-form" action="/login" method="post" />
+        <label for="username">User Name</label>
+        <input name="username" type="text" placeholder="admin@propaneipsum.com" />
+
+        <label for="password">Password</label>
+        <input type="password" name="password" />
+
+        <button type="submit">
+            Submit
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
