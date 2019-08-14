@@ -3,8 +3,8 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+  console.log('lets see a quote!');
   res.render('index', {
-    taco: "taco",
     title: 'Strickland Ipsum',
     subtitle: 'Placeholder text and placeholder text accessories since 2019'
   });

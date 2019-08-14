@@ -44,7 +44,7 @@ router.post('/login', (req, res, next)=> {
 router.post('/logout', (req, res, next) => {
     console.log('logging out!');
     res.clearCookie('token');
-    res.redirect('/auth');
+    res.redirect('/');
 });
 
 

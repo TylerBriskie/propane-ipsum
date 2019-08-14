@@ -3,12 +3,16 @@
     <% include partials/head.ejs %>
 
     <body>
-
-
-
       <% include partials/header.ejs %>
     <div class="view-container">
-
+        <form>
+            <label for="select-season">Select Season</label>
+            <select name="select-season" id="select-season">
+                <% for (let i = 1; i<=13; i++){ %>
+                    <option value=i><%=i%></option>
+                <% }%>
+            </select>
+        </form>
     </div>
     </body>
 

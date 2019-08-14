@@ -82,6 +82,9 @@ textarea {
   width: 100vw;
   background-color: #335533;
   color: #A9CAB9;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .view-container {
@@ -93,4 +96,10 @@ textarea {
 
 .container {
   padding: 1vw 7vw;
+}
+
+#logout-button {
+  margin: 0 200px;
+  padding: 0;
+  width: 200px;
 }
