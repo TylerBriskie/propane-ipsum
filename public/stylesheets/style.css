@@ -35,8 +35,8 @@ label {
 form {
   display: flex;
   flex-direction: column;
-  width: 40%;
-  height: 60vh;
+  width: 70%;
+  height: 80vh;
   justify-content: flex-start;
 }
 
@@ -67,7 +67,7 @@ textarea {
   overflow: auto;
   padding: 7px;
   display: block;
-  height: 100px;
+  height: 150px;
   width: 100%;
   border: solid #00B7FF 2px;
   border-radius: 12px;
