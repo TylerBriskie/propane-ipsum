@@ -23,6 +23,7 @@ h2 {
 h4 {
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 20px;
+  margin-top: .25em;
 }
 p, span, a {
   font-family: 'Roboto Condensed', sans-serif;
@@ -118,7 +119,7 @@ textarea {
 #logout-button, #refresh-button {
   margin-left: 2em;
   padding: .25em;
-  width: 200px;
+  width: 170px;
 }
 #header-hero-image{
 height: 100%;
