@@ -34,10 +34,9 @@ router.get('/', function(req, res, next) {
           formattedQuotes.push(quotes[i].quote);
       }
     }
-    console.log('short count: ', formattedHeadings.length, ' med count: ', formattedSubheadings.length, ' long count: ', formattedQuotes.length);
-    console.log('FORMATTED QUOTES: ', formattedQuotes);
+
     res.render('index', {
-      title: 'Strickland Ipsum',
+      title: 'Propane Ipsum',
       subtitle: 'Placeholder text and placeholder text accessories since 2019',
       headings: formattedHeadings,
       subHeadings: formattedSubheadings,
