@@ -19,7 +19,6 @@ var app = express();
 // MIDDLEWAREZ
 
 app.use(cors());
-app.use('/favicon.ico', express.static('./public/favicon.ico'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
