@@ -90,6 +90,7 @@ textarea {
 
 .app-header {
   height: 12vh;
+  min-height:
   width: 100vw;
   background-color: #335533;
   color: #A9CAB9;
