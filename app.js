@@ -59,7 +59,7 @@ app.use(function(err, req, res, next) {
 });
 
 // APP
-app.listen(process.env.port || 1337, () => {
+app.listen(process.env.PORT || 1337, () => {
   mongoose.connect(atlas.URI, error => {
     if (error){
       console.error("error: " + error);
