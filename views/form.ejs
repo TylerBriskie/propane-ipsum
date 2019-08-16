@@ -9,18 +9,16 @@
             <%=title%>
         </h1>
         <form id="add-quote-form" action="/form/newQuoteForm" method="post" />
-            <label for="character">Character</label>
-            <input name="character" type="text" placeholder="Character" value=""/>
-        <h4>OR SELECT FROM THE DROPDOWN</h4>
 
+        <label for="character">Character</label>
         <select name="character" id="quote-form-character-select">
                     inm
                     <%
-                    for (let i = 0; i < characters.length; i++){
-
-                    %><option value=<%=characters[i]%>> <%= characters[i] %></option><%
-                    }
-
+                        for (let i = 0; i < characters.length; i++){
+                    %>
+                            <option value="<%= characters[i].name %>"> <%= characters[i].name %></option>
+                    <%
+                        }
                     %>
                 </select>
             <label for="season">Season</label>

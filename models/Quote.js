@@ -1,13 +1,12 @@
 const mongoose = require('mongoose');
-const Character = require('./Character');
 
 const Schema = mongoose.Schema;
 
 const quoteSchema = new Schema({
-    character: Character,
+    character: String,
     quote: String,
     season: Number,
-    length: Number,
+    length: String,
 });
 
-module.exports = mongoose.model('quote', quoteSchema, 'quotes');
+module.exports = mongoose.model('Quote', quoteSchema, 'quotes');
