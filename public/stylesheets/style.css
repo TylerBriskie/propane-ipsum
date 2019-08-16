@@ -12,15 +12,24 @@ body {
 }
 h1 {
   font-family: 'Luckiest Guy', sans-serif;
-  font-size: 55px;
+  font-size: 45px;
+  text-shadow: black 4px 4px;
+}
+h2 {
+  font-family: 'Helvetica', sans-serif;
+  font-size: 250%;
+  margin-top: 1em;
 }
 h4 {
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 20px;
-  margin-top: 1em;
 }
 p, span, a {
   font-family: 'Roboto Condensed', sans-serif;
+}
+
+p {
+  margin-top: 1em;
 }
 
 a {
@@ -42,14 +51,15 @@ form {
 
 button{
   margin: 3em 0;
-  border: #FFF solid 4px;
+  border: #779977 solid 4px;
   border-radius: 15px;
   padding: 1em 0;
-  background-color: #00B7FF;
+  background-color: #FFF;
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 30px;
-  color: #FFF;
+  color: #779977;
 }
+button:focus{ outline: none}
 
 input, select, textarea {
   font-size: 140%;
@@ -83,8 +93,15 @@ textarea {
   background-color: #335533;
   color: #A9CAB9;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.app-header h4 {
+  color: whitesmoke;
+  font-size: 180%;
 }
 
 .view-container {
@@ -98,8 +115,11 @@ textarea {
   padding: 1vw 7vw;
 }
 
-#logout-button {
-  margin: 0 200px;
-  padding: 0;
+#logout-button, #refresh-button {
+  margin-left: 2em;
+  padding: .25em;
   width: 200px;
+}
+#header-hero-image{
+height: 100%;
 }

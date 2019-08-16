@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
   let formattedSubheadings = [];
   let formattedQuotes = [];
 
-  Quote.aggregate([{$sample: { size: 40 }}]).then((quotes)=> {
+  Quote.aggregate([{$sample: { size: 100 }}]).then((quotes)=> {
     for (let i = 0; i<quotes.length; i++){
       switch (quotes[i].length){
         case "LONG":
@@ -17,16 +17,24 @@ router.get('/', function(req, res, next) {
 
           break;
         case "MEDIUM":
-          formattedSubheadings.push(quotes[i].quote);
-          console.log("med boy: ", quotes[i].quote);
+          if (formattedSubheadings.length < 5){
+
+            formattedSubheadings.push(quotes[i].quote);
+          } else {
+            formattedQuotes.push(quotes[i].quote);
+          }
           break;
         case "SHORT":
-          formattedHeadings.push(quotes[i].quote);
-          break;
+          if (formattedHeadings.length < 5){
+            formattedHeadings.push(quotes[i].quote);
+          } else {
+            formattedQuotes.push(quotes[i].quote);
+          }          break;
         default:
           formattedQuotes.push(quotes[i].quote);
       }
     }
+    console.log('short count: ', formattedHeadings.length, ' med count: ', formattedSubheadings.length, ' long count: ', formattedQuotes.length);
     console.log('FORMATTED QUOTES: ', formattedQuotes);
     res.render('index', {
       title: 'Strickland Ipsum',
