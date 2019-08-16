@@ -5,14 +5,32 @@
     <body>
       <% include partials/header.ejs %>
     <div class="view-container">
-        <form>
-            <label for="select-season">Select Season</label>
-            <select name="select-season" id="select-season">
-                <% for (let i = 1; i<=13; i++){ %>
-                    <option value=i><%=i%></option>
-                <% }%>
-            </select>
-        </form>
+
+        <h2><%=headings[0]%></h2>
+        <h4><%=subHeadings[0]%></h4>
+        <p>
+            <%
+            for (let i = 0; i < 5; i++){
+            %>
+                <%= quotes[i] %>
+            <%
+            }
+            %>
+        </p>
+
+        <h2><%=headings[1]%></h2>
+        <h4><%=subHeadings[1]%></h4>
+        <p>
+            <%
+            for (let i = 5; i < 10; i++){
+            %>
+                <%= quotes[i] %>
+            <%
+            }
+            %>
+        </p>
+
+
     </div>
     </body>
 
