@@ -7,7 +7,8 @@ const express = require('express');
 const path = require('path');
 const logger = require('morgan');
 
-const atlas = require('./config/keys');
+// const atlas = require('./config/keys');
+require('dotenv').config();
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
@@ -17,6 +18,7 @@ const auth = require('./routes/auth');
 var app = express();
 
 // MIDDLEWAREZ
+console.log("process.env", process.env);
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -60,7 +62,7 @@ app.use(function(err, req, res, next) {
 
 // APP
 app.listen(process.env.PORT || 1337, () => {
-  mongoose.connect(atlas.URI, error => {
+  mongoose.connect(process.env.DB_CONN_STRING, error => {
     if (error){
       console.error("error: " + error);
     }
