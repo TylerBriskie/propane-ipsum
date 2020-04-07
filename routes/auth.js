@@ -3,6 +3,7 @@ const bcrypt = require ('bcrypt');
 const jwt = require('jsonwebtoken');
 const router = express.Router();
 const User = require('../models/User');
+require('dotenv').config();
 
 /* LOGIN page. */
 router.get('/', function(req, res, next) {
@@ -29,7 +30,7 @@ router.post('/login', (req, res, next)=> {
                 bcrypt.compare(userData.password, user.password, (err, login) => {
                     if (login){
                         let payload = { subject: user._id};
-                        let token = jwt.sign(payload, 'DangOlYoManTalkinBoutTryinaHackMyMainframe');
+                        let token = jwt.sign(payload, process.env.JWT_SECRET);
                         res.cookie('token', token);
                         res.redirect('/form');
                     } else {
